@@ -92,18 +92,17 @@
                                         <div class="book_tabel_item">
                                             <div class="input-group">
                                                 <select class="wide">
-                                                    <option data-display="Adult">Adult</option>
-                                                    <option value="1">Old</option>
-                                                    <option value="2">Younger</option>
-                                                    <option value="3">Potato</option>
+                                                    <option data-display="Persons">Persons</option>
+                                                    <option value="1">Single</option>
+                                                    <option value="2">Couple</option>
+                                                    <option value="3">Group</option>
                                                 </select>
                                             </div>
                                             <div class="input-group">
                                                 <select class="wide">
-                                                    <option data-display="Child">Child</option>
-                                                    <option value="1">Child</option>
-                                                    <option value="2">Baby</option>
-                                                    <option value="3">Child</option>
+                                                    <option data-display="Child">Childrens</option>
+                                                    <option value="2">Yes</option>
+                                                    <option value="3">No</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -112,14 +111,22 @@
                                         <div class="book_tabel_item">
                                             <div class="input-group">
                                                 <select class="wide">
-                                                    <option data-display="Select Room">Room Type</option>
+                                                    <option data-display="Room Type">Room Type</option>
                                                     <option value="1">Double Deluxe Room</option>
                                                     <option value="2">Single Deluxe Room</option>
                                                     <option value="3">Honeymoon Suit</option>
                                                     <option value="3">Economy Double</option>
                                                 </select>
                                             </div>
-                                            <input type="submit" class="book_now_btn button_hover" value="Book Now" >
+                                            <div class="input-group">
+                                                <select class="wide">
+                                                    <option data-display="Select Room">Select Room</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </div>
+                                            <input type="submit" class="book_now_btn button_hover book-btn" value="Book Now" >
                                             </form>
                                         </div>
                                     </div>
@@ -255,7 +262,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         <a href="#"><i class="fa fa-behance"></i></a>
                     </div>
                 </div>
-            </div>
+            </div>  
         </footer>
 		<!--================ End footer Area  =================-->
         
@@ -263,6 +270,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <!-- Optional JavaScript -->
         <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
         <script src="{% static 'js/popper.js' %}"></script>
+        <script src="{% static 'js/booking.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
         <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
