@@ -8,7 +8,7 @@ class Booking(models.Model):
     persons    = models.CharField(max_length=40, default=None)
     child      = models.CharField(max_length=40, default=None)    
     room_type  = models.CharField(max_length=40, default=None)
-    total_rooms = models.IntegerField(default=1)
+    total_rooms = models.IntegerField(default=0)
     customer_name = models.CharField(max_length=40, default=None)
     phone_num  = models.CharField(max_length=40, default=None)
 
