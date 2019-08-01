@@ -42,7 +42,7 @@ $( document ).ready(function() {
 $('#room_type').change(function(){
   updatePrice();
 });
-
+  
 function updatePrice(){
   if (document.getElementById('room_type').value == "Double Deluxe Room") {
     document.getElementById("spanprice").textContent = DoubleDeluxeRoom*daysDifference;
