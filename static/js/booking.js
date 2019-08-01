@@ -17,7 +17,7 @@ var tomorowdate = tomorrow.getFullYear()+'-'+(tomorrow.getMonth()+1)+'-'+tomorro
 var tomorowtime = tomorrow.getHours() + ":" + tomorrow.getMinutes();
 var tomorowampm = time >= 12 ? 'PM' : 'AM';
 var tomorowdateTime = tomorowdate+' '+tomorowtime+' '+tomorowampm;
-
+var daysDifference = 1;
 
 $( document ).ready(function() {
   $( "#dep_date" ).change(function() {
@@ -28,9 +28,10 @@ $( document ).ready(function() {
   	var dep=Math.round(new Date(valDep).getTime()/1000);
   	var arv=Math.round(new Date(valArv).getTime()/1000);
     var difference = dep - arv;
-    var daysDifference = Math.ceil(difference/60/60);
+    daysDifference = Math.ceil(difference/60/60/24);
 
     console.log(daysDifference);
+    updatePrice();
 
 	});
 	  $( "#arval_date" ).val(dateTime);
@@ -39,23 +40,27 @@ $( document ).ready(function() {
 });
 
 $('#room_type').change(function(){
+  updatePrice();
+});
+
+function updatePrice(){
   if (document.getElementById('room_type').value == "Double Deluxe Room") {
-  	document.getElementById("spanprice").textContent = DoubleDeluxeRoom;
-  	document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
+    document.getElementById("spanprice").textContent = DoubleDeluxeRoom*daysDifference;
+    document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
   }
   if (document.getElementById('room_type').value == "Single Deluxe Room") {
-  	document.getElementById("spanprice").textContent = SingleDeluxeRoom;
-  	document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
+    document.getElementById("spanprice").textContent = SingleDeluxeRoom*daysDifference;
+    document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
   }
   if (document.getElementById('room_type').value == "Honeymoon Suit") {
-  	document.getElementById("spanprice").textContent = HoneymoonSuit;
-  	document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
+    document.getElementById("spanprice").textContent = HoneymoonSuit*daysDifference;
+    document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
   }
   if (document.getElementById('room_type').value == "Economy Double") {
-  	document.getElementById("spanprice").textContent = EconomyDouble;
-  	document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
+    document.getElementById("spanprice").textContent = EconomyDouble*daysDifference;
+    document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
   }
-});
+}
 
 
 
