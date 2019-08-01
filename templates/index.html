@@ -68,10 +68,10 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="book_tabel_item">
+                                          <form method="post" action="" >{% csrf_token %}
                                             <div class="form-group">
-                                                <form method="post" action="" >{% csrf_token %}
                                                 <div class='input-group date'>
-                                                    <input type='text' class="form-control" id="arval_date" name="arval_date" placeholder="Arrival Date"/>
+                                                    <input type='text' class="form-control" id="arval_date" name="arval_date" placeholder="Arrival Date" required=""/>
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                                     </span>
@@ -79,7 +79,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class='input-group date'>
-                                                    <input type='text' class="form-control" id="dep_date" name="dep_date" placeholder="Departure Date"/>
+                                                    <input type='text' class="form-control" id="dep_date" name="dep_date" placeholder="Departure Date" required="" />
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                                     </span>
@@ -87,7 +87,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class='input-group name' id='name'>
-                                                    <input type='text' class="form-control" name="customer_name" id="customer_name" placeholder="Your name"/>
+                                                    <input type='text' class="form-control" name="customer_name" id="customer_name" placeholder="Your name" required=""/>
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-user" aria-hidden="true"></i>
                                                     </span>
@@ -98,65 +98,53 @@
                                     <div class="col-md-4">
                                         <div class="book_tabel_item">
                                             <div class="input-group">
-                                                <select class="wide" id="persons" name="persons">
+                                                <select class="wide" id="persons" name="persons" required="">
                                                     <option data-display="Persons">Persons</option>
-                                                    <option value="1">Single</option>
-                                                    <option value="2">Couple</option>
-                                                    <option value="3">Group</option>
-                                                </select>
-                                            </div>
-                                            <div class="input-group">
-                                                <select class="wide" id="child" name="child">
-                                                    <option data-display="Child">Childrens</option>
-                                                    <option value="2">Yes</option>
-                                                    <option value="3">No</option>
+                                                    <option value="Single">Single</option>
+                                                    <option value="Couple">Couple</option>
+                                                    <option value="Group">Group</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <div class='input-group email' id='email'>
-                                                    <input type='email' class="form-control" name="email" id="email" placeholder="Your Email"/>
+                                                    <input type='email' class="form-control" name="email" id="email" placeholder="Your Email" required=""/>
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-envelope" aria-hidden="true"></i>
                                                     </span>
-                                                </div>
-                                                <div class="popup" ><h5 class="hed-price" align="center" onclick="myFunction()">Check Your Price
-                                                    <span class="popuptext" id="myPopup">Popup text...</span></h5>
-                                                </div>     
+                                                </div>    
+                                                <div class="input-group">
+                                                <select class="wide"  id="room_type" name="room_type" required="">
+                                                    <option data-display="Room Type">Room Type</option>
+                                                    <option value="Double Deluxe Room">Double Deluxe Room</option>
+                                                    <option value="Single Deluxe Room">Single Deluxe Room</option>
+                                                    <option value="Honeymoon Suit">Honeymoon Suit</option>
+                                                    <option value="Economy Double">Economy Double</option>
+                                                </select>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="book_tabel_item">
-                                            <div class="input-group">
-                                                <select class="wide" id="room_type" name="room_type">
-                                                    <option data-display="Room Type">Room Type</option>
-                                                    <option value="1">Double Deluxe Room</option>
-                                                    <option value="2">Single Deluxe Room</option>
-                                                    <option value="3">Honeymoon Suit</option>
-                                                    <option value="3">Economy Double</option>
-                                                </select>
-                                            </div>
-                                            <div class="input-group">
-                                                <select class="wide" id="total_rooms" name="total_rooms">
-                                                    <option data-display="Select Room">Select Room</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                </select>
-                                            </div>
                                             <div class="form-group">
-                                                <div class='input-group date'>
-                                                    <input type='phone' class="form-control" id="phone_num" name="phone_num" placeholder="Your Phone No."/>
+                                                <div class='input-group'>
+                                                    <input type='tel' class="form-control" id="phone_num" name="phone_num" placeholder="Your Phone No." required=""/>
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-phone" aria-hidden="true"></i>
                                                     </span>
                                                 </div>
+                                                <div class="popup">
+                                                    <h5 class="hed-price text-center">YOUR PRICE = $<span id="spanprice">0</span></h5>
+                                                </div>
+                                                <div class="input-group">
+                                                <input style="display: none;" class="form-control" type="text" name="price" id="price" value="">
+                                                </div> 
                                             </div>
-                                            <input type="submit" class="book_now_btn button_hover book-btn" value="Book Now" >
-                                            </form>
+                                            <input  type="submit" class="book_now_btn button_hover book-btn" value="Book Now">  
                                         </div>
-                                    </div>
-                                </div>
+                                     </div>
+                                  </div>
+                               </form>
                             </div>
                         </div>
                     </div>
@@ -168,7 +156,7 @@
         <section class="accomodation_area section_gap">
             <div class="container">
                 <div class="section_title text-center">
-                    <h2 class="title_color">Special Accomodation</h2>
+                    <h2 class="title_color">Accomodation Pricing</h2>
                     <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast,</p>
                 </div>
                 <div class="row mb_30">

@@ -33,13 +33,30 @@ $( document ).ready(function() {
     console.log(daysDifference);
 
 	});
-
 	  $( "#arval_date" ).val(dateTime);
 	  $( "#dep_date" ).val(tomorowdateTime );
 
 });
 
-function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
+$('#room_type').change(function(){
+  if (document.getElementById('room_type').value == "Double Deluxe Room") {
+  	document.getElementById("spanprice").textContent = DoubleDeluxeRoom;
+  	document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
+  }
+  if (document.getElementById('room_type').value == "Single Deluxe Room") {
+  	document.getElementById("spanprice").textContent = SingleDeluxeRoom;
+  	document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
+  }
+  if (document.getElementById('room_type').value == "Honeymoon Suit") {
+  	document.getElementById("spanprice").textContent = HoneymoonSuit;
+  	document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
+  }
+  if (document.getElementById('room_type').value == "Economy Double") {
+  	document.getElementById("spanprice").textContent = EconomyDouble;
+  	document.getElementById('price').value = document.getElementById('spanprice').innerHTML;
+  }
+});
+
+
+
+
