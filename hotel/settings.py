@@ -24,6 +24,7 @@ SECRET_KEY = 'kg2x2fkme@!d^oq-sk-kc&$0@k!qfz=0o6mxqyg^_x77r0kd)2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+from .base import *
 
 ALLOWED_HOSTS = ['*']
 
