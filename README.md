@@ -1,3 +1,6 @@
 # hotel-project
-This Project is for portfolio only
-This is demo project
+
+This is demo project of hotel booking services
+
+Created in Django (https://www.djangoproject.com/)
+
