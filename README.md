@@ -1,4 +1,4 @@
-# hotel-project
+# Royal Hotel
 
 This is demo project of hotel booking services
 
